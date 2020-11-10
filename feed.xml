@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>少侠的记事本</title>
+    <link href="https://shaoxiaxl.github.io/blog/feed.xml" rel="self" />
+    <link href="https://shaoxiaxl.github.io/blog" />
+    <updated>2020-11-10T14:34:16+08:00</updated>
+    <author>
+        <name>ShaoXia</name>
+    </author>
+    <id>https://shaoxiaxl.github.io/blog</id>
+
+    <entry>
+        <title>日常用的链接</title>
+        <author>
+            <name>ShaoXia</name>
+        </author>
+        <link href="https://shaoxiaxl.github.io/blog/ri-chang-yong-de-lian-jie.html"/>
+        <id>https://shaoxiaxl.github.io/blog/ri-chang-yong-de-lian-jie.html</id>
+
+        <updated>2020-11-10T14:34:16+08:00</updated>
+            <summary>
+                <![CDATA[
+                    优秀的产品Product Hunt每天都会发布最好的新产品。 
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><a href="https://www.producthunt.com/">优秀的产品</a>Product Hunt每天都会发布最好的新产品。</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
+</feed>
