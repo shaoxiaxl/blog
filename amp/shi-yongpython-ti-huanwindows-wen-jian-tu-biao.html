@@ -1,4 +1,4 @@
-<!doctype html><html amp lang="zh-cn"><head><meta charset="utf-8"><title>用gdb调试python! - 少侠的记事本</title><meta name="description" content="###用gdb调试python! 1，安装 apt-get install gdbgdb (GDB) 7.0以上才支持sudo apt-get install gdb python2.7-dbg2,常用命令 py-listpy-up and py-downpy-btpy-printpy-localsinfo threadsthread apply all py-btfinishcontinuer"><link rel="canonical" href="https://shaoxiaxl.github.io/blog/yonggdb-diao-shipython.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://shaoxiaxl.github.io/blog/amp/yonggdb-diao-shipython.html"},"headline":"用gdb调试python!","datePublished":"2016-05-25T23:31","dateModified":"2020-11-20T22:26","description":"###用gdb调试python! 1，安装 apt-get install gdbgdb (GDB) 7.0以上才支持sudo apt-get install gdb python2.7-dbg2,常用命令 py-listpy-up and py-downpy-btpy-printpy-localsinfo threadsthread apply all py-btfinishcontinuer","author":{"@type":"Person","name":"ShaoXia"},"publisher":{"@type":"Organization","name":"ShaoXia"}}</script><style amp-custom>article,
+<!doctype html><html amp lang="zh-cn"><head><meta charset="utf-8"><title>使用python替换windows文件图标 - 少侠的记事本</title><meta name="description" content="# encoding: utf-8from win32com.shell import shell, shellconimport winerrorimport urllibimport subprocessdriveRoots = []currentFolderUri = NonesyncStatuses = Nonedef nxlog(msg): #记录调试日志 logFile = open(&quot;C:\\Users\\Administrator\\driveOverlay.log&quot;, &quot;a&quot;) logFile.write(msg + &quot;\n&quot;) logFile.close()class IconOverlay: #可以自动生成 _reg_clsid_ = &#39;{B4123171-F6D6-4FAD-9402-8F6B04E439C7}&#39; _reg_progid_ = &#39;NuxeoDrive.PythonOverlayHandler&#39; _reg_desc_ = &#39;Icon Overlay Handler for Nuxeo Drive&#39; _public_methods_ = [&#39;GetOverlayInfo&#39;,&hellip;"><link rel="canonical" href="https://shaoxiaxl.github.io/blog/shi-yongpython-ti-huanwindows-wen-jian-tu-biao.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://shaoxiaxl.github.io/blog/amp/shi-yongpython-ti-huanwindows-wen-jian-tu-biao.html"},"headline":"使用python替换windows文件图标","datePublished":"2017-11-13T23:26","dateModified":"2020-11-20T23:26","description":"# encoding: utf-8from win32com.shell import shell, shellconimport winerrorimport urllibimport subprocessdriveRoots = []currentFolderUri = NonesyncStatuses = Nonedef nxlog(msg): #记录调试日志 logFile = open(&quot;C:\\\\Users\\\\Administrator\\\\driveOverlay.log&quot;, &quot;a&quot;) logFile.write(msg + &quot;\\n&quot;) logFile.close()class IconOverlay: #可以自动生成 _reg_clsid_ = &#39;{B4123171-F6D6-4FAD-9402-8F6B04E439C7}&#39; _reg_progid_ = &#39;NuxeoDrive.PythonOverlayHandler&#39; _reg_desc_ = &#39;Icon Overlay Handler for Nuxeo Drive&#39; _public_methods_ = [&#39;GetOverlayInfo&#39;,&hellip;","author":{"@type":"Person","name":"ShaoXia"},"publisher":{"@type":"Organization","name":"ShaoXia"}}</script><style amp-custom>article,
 aside,
 footer,
 header,
@@ -553,18 +553,78 @@ aside {
   background: #039be5;
   color: #ffffff;
   padding: 1.06667rem 4%;
-  text-align: center; }</style><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><script async src="https://cdn.ampproject.org/v0.js"></script><script custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js" async></script><script custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js" async></script></head><body class="bg-white"><nav class="navbar wrap-inner" id="top"><div><a on="tap:navbar-sidebar.toggle" class="navbar-sidebar-toggle" title="Menu">Menu</a> <a class="logo logo-text" href="https://shaoxiaxl.github.io/blog/amp/">少侠的记事本</a></div></nav><main class="wrap-page"><article class="post"><div class="wrap-inner"><header class="post-header"><h1>用gdb调试python!</h1><p class="post-meta">By <a href="https://shaoxiaxl.github.io/blog/amp/authors/shaoxia/" rel="nofollow" title="ShaoXia">ShaoXia</a> <time datetime="2016-05-25T23:31">五月 25, 2016</time></p></header><p>###用gdb调试python!</p><p>1，安装</p><pre><code>apt-get install gdb
-gdb (GDB) 7.0以上才支持
-sudo apt-get install gdb python2.7-dbg</code></pre><p>2,常用命令</p><pre><code>py-list
-py-up and py-down
-py-bt
-py-print
-py-locals
-info threads
-thread apply all py-bt
-finish
-continue
-r</code></pre><aside><ul class="post-tag"><li><a href="https://shaoxiaxl.github.io/blog/amp/tags/python/">python</a></li><li><a href="https://shaoxiaxl.github.io/blog/amp/tags/you-hua/">优化</a></li></ul><div class="post-share"><amp-social-share type="system" width="40" height="40" data-param-text="用gdb调试python!"></amp-social-share><amp-social-share type="facebook" width="40" height="40" data-param-app_id="" data-param-text="用gdb调试python!" data-param-href="https://shaoxiaxl.github.io/blog/amp/yonggdb-diao-shipython.html"></amp-social-share><amp-social-share type="twitter" width="40" height="40" data-param-text="用gdb调试python!" data-param-url="https://shaoxiaxl.github.io/blog/amp/yonggdb-diao-shipython.html"></amp-social-share><amp-social-share type="pinterest" width="40" height="40" data-param-url="https://shaoxiaxl.github.io/blog/amp/yonggdb-diao-shipython.html"></amp-social-share><amp-social-share type="tumblr" width="40" height="40" data-param-text="用gdb调试python!" data-param-url="https://shaoxiaxl.github.io/blog/amp/yonggdb-diao-shipython.html"></amp-social-share><amp-social-share type="whatsapp" width="40" height="40" data-param-text="用gdb调试python!"></amp-social-share></div></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Previous</span> <a href="https://shaoxiaxl.github.io/blog/amp/dan-jikubernetes-de-pei-zhi-he-an-zhuang.html">单机Kubernetes的配置和安装!</a></div><div class="post-pagination-next"><span>Next</span> <a href="https://shaoxiaxl.github.io/blog/amp/config-wen-jian-de-you-ya-xie-fa.html">config文件的优雅写法</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
+  text-align: center; }</style><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><script async src="https://cdn.ampproject.org/v0.js"></script><script custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js" async></script><script custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js" async></script></head><body class="bg-white"><nav class="navbar wrap-inner" id="top"><div><a on="tap:navbar-sidebar.toggle" class="navbar-sidebar-toggle" title="Menu">Menu</a> <a class="logo logo-text" href="https://shaoxiaxl.github.io/blog/amp/">少侠的记事本</a></div></nav><main class="wrap-page"><article class="post"><div class="wrap-inner"><header class="post-header"><h1>使用python替换windows文件图标</h1><p class="post-meta">By <a href="https://shaoxiaxl.github.io/blog/amp/authors/shaoxia/" rel="nofollow" title="ShaoXia">ShaoXia</a> <time datetime="2017-11-13T23:26">十一月 13, 2017</time></p></header><pre><code># encoding: utf-8
+from win32com.shell import shell, shellcon
+import winerror
+import urllib
+import subprocess
+driveRoots = []
+currentFolderUri = None
+syncStatuses = None
+def nxlog(msg):
+    #记录调试日志
+    logFile = open(&quot;C:\\Users\\Administrator\\driveOverlay.log&quot;, &quot;a&quot;)
+    logFile.write(msg + &quot;\n&quot;)
+    logFile.close()
+class IconOverlay:
+    #可以自动生成
+    _reg_clsid_ = &#39;{B4123171-F6D6-4FAD-9402-8F6B04E439C7}&#39;
+    _reg_progid_ = &#39;NuxeoDrive.PythonOverlayHandler&#39;
+    _reg_desc_ = &#39;Icon Overlay Handler for Nuxeo Drive&#39;
+    _public_methods_ = [&#39;GetOverlayInfo&#39;, &#39;GetPriority&#39;, &#39;IsMemberOf&#39;]
+    _com_interfaces_ = [shell.IID_IShellIconOverlayIdentifier]
+    def __init__(self):
+        nxlog(&quot;Starting&quot;)
+    def GetOverlayInfo(self):
+        nxlog(&quot;return Normal icon&quot;)
+        return (r&#39;C:\sync\logo.ico&#39;, 0, shellcon.ISIOI_ICONFILE)
+    def GetPriority(self):
+        return 50
+    #判断方法
+    def IsMemberOf(self, fname, attributes):
+        nxlog(&quot;calling isMember on &quot; + fname)
+        if (&quot;nuxeo&quot; in fname):
+            if (&quot;finan&quot; in fname):
+                return winerror.S_FALSE
+            else:
+                nxlog(&quot;return ok for synced&quot;)
+                return winerror.S_OK
+        return winerror.S_FALSE
+class PendingIconOverlay:
+    _reg_clsid_ = &#39;{BE8CEBD1-5AB8-403F-9984-F34251A1705C}&#39;
+    _reg_progid_ = &#39;NuxeoDrive.PythonPendingOverlayHandler&#39;
+    _reg_desc_ = &#39;Icon Overlay Handler for Nuxeo Drive Pending files&#39;
+    _public_methods_ = [&#39;GetOverlayInfo&#39;, &#39;GetPriority&#39;, &#39;IsMemberOf&#39;]
+    _com_interfaces_ = [shell.IID_IShellIconOverlayIdentifier]
+    def __init__(self):
+        nxlog(&quot;Starting&quot;)
+    def GetOverlayInfo(self):
+        nxlog(&quot;return Modified icon&quot;)
+        return (r&#39;C:\sync\logo.ico&#39;, 0, shellcon.ISIOI_ICONFILE)
+    def GetPriority(self):
+        return 50
+    def IsMemberOf(self, fname, attributes):
+        nxlog(&quot;calling isMember on &quot; + fname)
+        if (&quot;nuxeo&quot; in fname):
+            if (&quot;finan&quot; in fname):
+                nxlog(&quot;return ok for pending&quot;)
+                return winerror.S_OK
+            else:
+                return winerror.S_FALSE
+        return winerror.S_FALSE
+if __name__ == &#39;__main__&#39;:
+    import win32api
+    import win32con
+    import win32com.server.register
+    win32com.server.register.UseCommandLine(IconOverlay)
+    keyname = r&#39;Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\  NuxeoDriveOverlay&#39;
+    key = win32api.RegCreateKey(win32con.HKEY_LOCAL_MACHINE, keyname)
+    win32api.RegSetValue(key, None, win32con.REG_SZ, IconOverlay._reg_clsid_)
+    win32com.server.register.UseCommandLine(PendingIconOverlay)
+    keyname = r&#39;Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\  NuxeoDrivePendingOverlay&#39;
+    key = win32api.RegCreateKey(win32con.HKEY_LOCAL_MACHINE, keyname)
+    win32api.RegSetValue(key, None, win32con.REG_SZ,
+PendingIconOverlay._reg_clsid_)</code></pre><aside><div class="post-share"><amp-social-share type="system" width="40" height="40" data-param-text="使用python替换windows文件图标"></amp-social-share><amp-social-share type="facebook" width="40" height="40" data-param-app_id="" data-param-text="使用python替换windows文件图标" data-param-href="https://shaoxiaxl.github.io/blog/amp/shi-yongpython-ti-huanwindows-wen-jian-tu-biao.html"></amp-social-share><amp-social-share type="twitter" width="40" height="40" data-param-text="使用python替换windows文件图标" data-param-url="https://shaoxiaxl.github.io/blog/amp/shi-yongpython-ti-huanwindows-wen-jian-tu-biao.html"></amp-social-share><amp-social-share type="pinterest" width="40" height="40" data-param-url="https://shaoxiaxl.github.io/blog/amp/shi-yongpython-ti-huanwindows-wen-jian-tu-biao.html"></amp-social-share><amp-social-share type="tumblr" width="40" height="40" data-param-text="使用python替换windows文件图标" data-param-url="https://shaoxiaxl.github.io/blog/amp/shi-yongpython-ti-huanwindows-wen-jian-tu-biao.html"></amp-social-share><amp-social-share type="whatsapp" width="40" height="40" data-param-text="使用python替换windows文件图标"></amp-social-share></div></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Previous</span> <a href="https://shaoxiaxl.github.io/blog/amp/python-zhuang-shi-qi.html">python装饰器</a></div><div class="post-pagination-next"><span>Next</span> <a href="https://shaoxiaxl.github.io/blog/amp/fen-hua-du-de-qu-shi-ce-lue-yong-yu-zhi-shu-de-ce-lue.html">分化度的趋势策略，用于指数的策略</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
                     "duration": "200ms",
                     "fill": "both",
                     "iterations": "1",
