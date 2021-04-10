@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>django-filter的简单使用 - 少侠的记事本</title><meta name="description" content="django-filter文档地址 INSTALLED_APPS = [ ... &#39;rest_framework&#39;, &#39;django_filters&#39;, &#39;crispy_forms&#39;, &#39;sample&#39;, ] REST_FRAMEWORK = { &#39;DEFAULT_FILTER_BACKENDS&#39;: (&#39;django_filters.rest_framework.DjangoFilterBackend&#39;,) }from django.db import models class Product(models.Model): name = models.CharField(max_length=255) price = models.DecimalField() description = models.TextField() release_date = models.DateField() manufacturer = models.ForeignKey(Manufacturer)###过滤器 进行价格或release_date进行过滤 import django_filters class ProductFilter(django_filters.FilterSet): name = django_filters.CharFilter(lookup_expr=&#39;iexact&#39;) class&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://shaoxiaxl.github.io/blog/django-filterde-jian-dan-shi-yong.html"><link rel="amphtml" href="https://shaoxiaxl.github.io/blog/amp/django-filterde-jian-dan-shi-yong.html"><link rel="alternate" type="application/atom+xml" href="https://shaoxiaxl.github.io/blog/feed.xml"><link rel="alternate" type="application/json" href="https://shaoxiaxl.github.io/blog/feed.json"><meta property="og:title" content="django-filter的简单使用"><meta property="og:site_name" content="少侠的记事本"><meta property="og:description" content="django-filter文档地址 INSTALLED_APPS = [ ... &#39;rest_framework&#39;, &#39;django_filters&#39;, &#39;crispy_forms&#39;, &#39;sample&#39;, ] REST_FRAMEWORK = { &#39;DEFAULT_FILTER_BACKENDS&#39;: (&#39;django_filters.rest_framework.DjangoFilterBackend&#39;,) }from django.db import models class Product(models.Model): name = models.CharField(max_length=255) price = models.DecimalField() description = models.TextField() release_date = models.DateField() manufacturer = models.ForeignKey(Manufacturer)###过滤器 进行价格或release_date进行过滤 import django_filters class ProductFilter(django_filters.FilterSet): name = django_filters.CharFilter(lookup_expr=&#39;iexact&#39;) class&hellip;"><meta property="og:url" content="https://shaoxiaxl.github.io/blog/django-filterde-jian-dan-shi-yong.html"><meta property="og:type" content="article"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link href="https://fonts.googleapis.com/css?family=Lora:400,700&amp;subset=latin-ext&amp;display=swap" rel="stylesheet"><style>:root{--body-font:'Lora',serif;--heading-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--logo-font:'Lora',serif;--menu-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}</style><link rel="stylesheet" href="https://shaoxiaxl.github.io/blog/assets/css/style.css?v=1d9126d5c592483966037cf187b30969"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://shaoxiaxl.github.io/blog/django-filterde-jian-dan-shi-yong.html"},"headline":"django-filter的简单使用","datePublished":"2021-04-10T15:47","dateModified":"2021-04-10T15:56","description":"django-filter文档地址 INSTALLED_APPS = [ ... &#39;rest_framework&#39;, &#39;django_filters&#39;, &#39;crispy_forms&#39;, &#39;sample&#39;, ] REST_FRAMEWORK = { &#39;DEFAULT_FILTER_BACKENDS&#39;: (&#39;django_filters.rest_framework.DjangoFilterBackend&#39;,) }from django.db import models class Product(models.Model): name = models.CharField(max_length=255) price = models.DecimalField() description = models.TextField() release_date = models.DateField() manufacturer = models.ForeignKey(Manufacturer)###过滤器 进行价格或release_date进行过滤 import django_filters class ProductFilter(django_filters.FilterSet): name = django_filters.CharFilter(lookup_expr=&#39;iexact&#39;) class&hellip;","author":{"@type":"Person","name":"ShaoXia"},"publisher":{"@type":"Organization","name":"ShaoXia"}}</script></head><body><div class="site-container"><header class="top" id="js-header"><a class="logo" href="https://shaoxiaxl.github.io/blog/">少侠的记事本</a></header><main><article class="post"><div class="hero"><header class="hero__content"><div class="wrapper"><div class="post__meta"><time datetime="2021-04-10T15:47">四月 10, 2021</time></div><h1>django-filter的简单使用</h1><div class="post__meta post__meta--author"><a href="https://shaoxiaxl.github.io/blog/authors/shaoxia/" class="feed__author invert">ShaoXia</a></div></div></header></div><div class="wrapper post__entry"><p><a href="https://django-filter.readthedocs.io/en/master/">django-filter文档地址</a></p><pre><code>INSTALLED_APPS = [
+    ...
+    &#39;rest_framework&#39;,
+    &#39;django_filters&#39;, 
+    &#39;crispy_forms&#39;,
+    &#39;sample&#39;,
+]
+
+REST_FRAMEWORK = {
+    &#39;DEFAULT_FILTER_BACKENDS&#39;: (&#39;django_filters.rest_framework.DjangoFilterBackend&#39;,) 
+}</code></pre><pre><code>from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=255)
+    price = models.DecimalField()
+    description = models.TextField()
+    release_date = models.DateField()
+    manufacturer = models.ForeignKey(Manufacturer)</code></pre><p>###过滤器 进行价格或release_date进行过滤</p><pre><code>import django_filters
+
+class ProductFilter(django_filters.FilterSet):
+    name = django_filters.CharFilter(lookup_expr=&#39;iexact&#39;)
+
+    class Meta:
+        model = Product
+        fields = [&#39;price&#39;, &#39;release_date&#39;]</code></pre><p>###声明 过滤器</p><pre><code>    class ProductFilter(django_filters.FilterSet):
+    price = django_filters.NumberFilter()
+    price__gt = django_filters.NumberFilter(field_name=&#39;price&#39;, lookup_expr=&#39;gt&#39;)
+    price__lt = django_filters.NumberFilter(field_name=&#39;price&#39;, lookup_expr=&#39;lt&#39;)
+
+    release_year = django_filters.NumberFilter(field_name=&#39;release_date&#39;,lookup_expr=&#39;year&#39;)
+    release_year__gt = django_filters.NumberFilter(field_name=&#39;release_date&#39;,lookup_expr=&#39;year__gt&#39;)
+    release_year__lt = django_filters.NumberFilter(field_name=&#39;release_date&#39;,lookup_expr=&#39;year__lt&#39;)
+
+    manufacturer__name = django_filters.CharFilter(lookup_expr=&#39;icontains&#39;)
+
+    class Meta:
+        model = Product</code></pre><h4 id="过滤器有两个主要参数：">过滤器有两个主要参数：</h4><ul><li>field_name：要过滤的模型字段的名称。您可以使用Django的<strong>语法遍历“关系路径”以过滤相关模型上的字段。当然，manufacturer</strong>name。</li><li>lookup_expr：过滤时要使用的字段查找。__ 可以再次使用Django的语法来支持查找转换。当然，year__gte。</li></ul><pre><code>import django_filters
+
+class ProductFilter(django_filters.FilterSet):
+    class Meta:
+        model = Product
+        fields = {
+            &#39;price&#39;: [&#39;lt&#39;, &#39;gt&#39;],
+            &#39;release_date&#39;: [&#39;exact&#39;, &#39;year__gt&#39;],
+        }</code></pre><h4 id="覆盖默认过滤器">覆盖默认过滤器</h4><pre><code>class ProductFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = Product
+        fields = {
+            &#39;name&#39;: [&#39;exact&#39;],
+            &#39;release_date&#39;: [&#39;isnull&#39;],
+        }
+        filter_overrides = {
+            models.CharField: {
+                &#39;filter_class&#39;: django_filters.CharFilter,
+                &#39;extra&#39;: lambda f: {
+                    &#39;lookup_expr&#39;: &#39;icontains&#39;,
+                },
+            },
+            models.BooleanField: {
+                &#39;filter_class&#39;: django_filters.BooleanFilter,
+                &#39;extra&#39;: lambda f: {
+                    &#39;widget&#39;: forms.CheckboxInput,
+                },
+            },
+        }</code></pre><p>###与DRF集成</p><pre><code>from django_filters import rest_framework as filters
+
+class ProductList(generics.ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_fields = (&#39;category&#39;, &#39;in_stock&#39;)</code></pre><pre><code>from rest_framework import generics
+from django_filters import rest_framework as filters
+from myapp import Product
+
+
+class ProductFilter(filters.FilterSet):
+    min_price = filters.NumberFilter(field_name=&quot;price&quot;, lookup_expr=&#39;gte&#39;)
+    max_price = filters.NumberFilter(field_name=&quot;price&quot;, lookup_expr=&#39;lte&#39;)
+
+    class Meta:
+        model = Product
+        fields = [&#39;category&#39;, &#39;in_stock&#39;, &#39;min_price&#39;, &#39;max_price&#39;]
+
+
+class ProductList(generics.ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = ProductFilter</code></pre><p>lookup_expr |検索方法 exact |完全一致 contains |部分一致 startswith |前方一致 endswith |後方一致 regex |正規表現</p><p>数值 日期</p><p>lookup_expr｜ 検索方法 gt ｜超 lt ｜未満 gte ｜以上 lte ｜以下</p><p>时间 日期 lookup_expr｜ 検索方法 date ｜日付(YYYY-M-D) year ｜年(YYYY) month ｜月(M) day ｜日(D) week_day ｜(1-7 日曜が1) hour ｜時(H) minute ｜分(m) second ｜秒(s)</p><pre><code>fullname = filters.CharFilter(lookup_expr=&#39;contains&#39;)
+score = filters.NumberFilter(lookup_expr=&#39;gt&#39;)
+is_checked = filters.BooleanFilter()
+created_at = filters.DateTimeFilter(lookup_expr=&#39;gt&#39;)
+score_range = filters.RangeFilter(name=&#39;score&#39;)
+level = filters.ChoiceFilter(choices=Exam.LEVEL_SET)
+level = filters.MultipleChoiceFilter(choices=Exam.LEVEL_SET)</code></pre></div><footer class="wrapper post__footer"><p class="post__last-updated">This article was updated on 四月 10, 2021</p><div class="post__share"></div><div class="post__bio bio"><div class="bio__info"><h3 class="bio__name"><a href="https://shaoxiaxl.github.io/blog/authors/shaoxia/" class="invert" rel="author">ShaoXia</a></h3></div></div></footer></article><nav class="post__nav"><div class="post__nav-inner"><div class="post__nav-prev"><svg width="1.041em" height="0.416em" aria-hidden="true"><use xlink:href="https://shaoxiaxl.github.io/blog/assets/svg/svg-map.svg#arrow-prev"/></svg> <a href="https://shaoxiaxl.github.io/blog/docker-image-neiapt-pip-gai-yuan.html" class="invert post__nav-link" rel="prev"><span>Previous</span> docker image内apt pip 改源</a></div></div></nav></main><footer class="footer"><div class="footer__copyright"><p>Powered by <a href="https://getpublii.com" target="_blank" rel="nofollow noopener">Publii</a></p></div><button class="footer__bttop js-footer__bttop" aria-label="Back to top"><svg><title>Back to top</title><use xlink:href="https://shaoxiaxl.github.io/blog/assets/svg/svg-map.svg#toparrow"/></svg></button></footer></div><script>window.publiiThemeMenuConfig = {    
+        mobileMenuMode: 'sidebar',
+        animationSpeed: 300,
+        submenuWidth: 'auto',
+        doubleClickTime: 500,
+        mobileMenuExpandableSubmenus: true, 
+        relatedContainerForOverlayMenuSelector: '.top',
+   };</script><script defer="defer" src="https://shaoxiaxl.github.io/blog/assets/js/scripts.min.js?v=f4c4d35432d0e17d212f2fae4e0f8247"></script><script>var images = document.querySelectorAll('img[loading]');
+
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script></body></html>

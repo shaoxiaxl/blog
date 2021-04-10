@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://shaoxiaxl.github.io/blog/sitemap.xml

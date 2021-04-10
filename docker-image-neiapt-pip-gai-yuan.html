@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>docker image内apt pip 改源 - 少侠的记事本</title><meta name="description" content="FROM python:3.7-slim MAINTAINER liu8816 #alpine安装pandas慢,且不能从whl安装，只能编译安装，所以集成备用： # docker build -t py37:v1_slim . --network=host #支持中文 (需先安装了中文包) #ENV LC_ALL=zh_CN.utf8 #ENV LANG=zh_CN.utf8 #ENV LANGUAGE=zh_CN.utf8 ENV BOTTLE_VER 0.12.18 #COPY entrypoint.sh /entrypoint.sh COPY requirements.txt /data/requirements.txt #更新Alpine的软件源为国内（清华大学）的站点，因为从默认官源拉取实在太慢了。。。 # http://dl-cdn.alpinelinux.org/alpine/v3.11/main # https://mirrors.aliyun.com/alpine/ #set是shell的一个命令，因为shell的执行的过程中，如果有某个出错了，也会继续往下执行，set -ex作用就是，当下面的命令执行出错后，就退出执行，不在继续往下执行。 #RUN echo &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/&quot; &gt; /etc/apk/repositories RUN set -ex \&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://shaoxiaxl.github.io/blog/docker-image-neiapt-pip-gai-yuan.html"><link rel="amphtml" href="https://shaoxiaxl.github.io/blog/amp/docker-image-neiapt-pip-gai-yuan.html"><link rel="alternate" type="application/atom+xml" href="https://shaoxiaxl.github.io/blog/feed.xml"><link rel="alternate" type="application/json" href="https://shaoxiaxl.github.io/blog/feed.json"><meta property="og:title" content="docker image内apt pip 改源"><meta property="og:site_name" content="少侠的记事本"><meta property="og:description" content="FROM python:3.7-slim MAINTAINER liu8816 #alpine安装pandas慢,且不能从whl安装，只能编译安装，所以集成备用： # docker build -t py37:v1_slim . --network=host #支持中文 (需先安装了中文包) #ENV LC_ALL=zh_CN.utf8 #ENV LANG=zh_CN.utf8 #ENV LANGUAGE=zh_CN.utf8 ENV BOTTLE_VER 0.12.18 #COPY entrypoint.sh /entrypoint.sh COPY requirements.txt /data/requirements.txt #更新Alpine的软件源为国内（清华大学）的站点，因为从默认官源拉取实在太慢了。。。 # http://dl-cdn.alpinelinux.org/alpine/v3.11/main # https://mirrors.aliyun.com/alpine/ #set是shell的一个命令，因为shell的执行的过程中，如果有某个出错了，也会继续往下执行，set -ex作用就是，当下面的命令执行出错后，就退出执行，不在继续往下执行。 #RUN echo &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/&quot; &gt; /etc/apk/repositories RUN set -ex \&hellip;"><meta property="og:url" content="https://shaoxiaxl.github.io/blog/docker-image-neiapt-pip-gai-yuan.html"><meta property="og:type" content="article"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link href="https://fonts.googleapis.com/css?family=Lora:400,700&amp;subset=latin-ext&amp;display=swap" rel="stylesheet"><style>:root{--body-font:'Lora',serif;--heading-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--logo-font:'Lora',serif;--menu-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}</style><link rel="stylesheet" href="https://shaoxiaxl.github.io/blog/assets/css/style.css?v=1d9126d5c592483966037cf187b30969"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://shaoxiaxl.github.io/blog/docker-image-neiapt-pip-gai-yuan.html"},"headline":"docker image内apt pip 改源","datePublished":"2021-03-21T19:58","dateModified":"2021-03-21T19:58","description":"FROM python:3.7-slim MAINTAINER liu8816 #alpine安装pandas慢,且不能从whl安装，只能编译安装，所以集成备用： # docker build -t py37:v1_slim . --network=host #支持中文 (需先安装了中文包) #ENV LC_ALL=zh_CN.utf8 #ENV LANG=zh_CN.utf8 #ENV LANGUAGE=zh_CN.utf8 ENV BOTTLE_VER 0.12.18 #COPY entrypoint.sh /entrypoint.sh COPY requirements.txt /data/requirements.txt #更新Alpine的软件源为国内（清华大学）的站点，因为从默认官源拉取实在太慢了。。。 # http://dl-cdn.alpinelinux.org/alpine/v3.11/main # https://mirrors.aliyun.com/alpine/ #set是shell的一个命令，因为shell的执行的过程中，如果有某个出错了，也会继续往下执行，set -ex作用就是，当下面的命令执行出错后，就退出执行，不在继续往下执行。 #RUN echo &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/&quot; &gt; /etc/apk/repositories RUN set -ex \\&hellip;","author":{"@type":"Person","name":"ShaoXia"},"publisher":{"@type":"Organization","name":"ShaoXia"}}</script></head><body><div class="site-container"><header class="top" id="js-header"><a class="logo" href="https://shaoxiaxl.github.io/blog/">少侠的记事本</a></header><main><article class="post"><div class="hero"><header class="hero__content"><div class="wrapper"><div class="post__meta"><time datetime="2021-03-21T19:58">三月 21, 2021</time></div><h1>docker image内apt pip 改源</h1><div class="post__meta post__meta--author"><a href="https://shaoxiaxl.github.io/blog/authors/shaoxia/" class="feed__author invert">ShaoXia</a></div></div></header></div><div class="wrapper post__entry"><pre><code>FROM python:3.7-slim
+
+MAINTAINER liu8816 
+#alpine安装pandas慢,且不能从whl安装，只能编译安装，所以集成备用：
+# docker build -t py37:v1_slim . --network=host
+
+#支持中文 (需先安装了中文包)
+#ENV LC_ALL=zh_CN.utf8
+#ENV LANG=zh_CN.utf8
+#ENV LANGUAGE=zh_CN.utf8
+
+ENV BOTTLE_VER 0.12.18
+
+#COPY entrypoint.sh /entrypoint.sh
+COPY requirements.txt /data/requirements.txt
+
+#更新Alpine的软件源为国内（清华大学）的站点，因为从默认官源拉取实在太慢了。。。
+# http://dl-cdn.alpinelinux.org/alpine/v3.11/main
+# https://mirrors.aliyun.com/alpine/
+#set是shell的一个命令，因为shell的执行的过程中，如果有某个出错了，也会继续往下执行，set -ex作用就是，当下面的命令执行出错后，就退出执行，不在继续往下执行。
+#RUN echo &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/&quot; &gt; /etc/apk/repositories
+RUN set -ex \
+    #容器通过代理上网时需开启 \
+    &amp;&amp; export http_proxy=http://136.15.2.88:900/ \
+    &amp;&amp; export https_proxy=http://136.15.2.88:900/ \
+
+    &amp;&amp; echo &quot;# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释&quot;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; echo &quot;# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free&quot;&gt;&gt;/etc/apt/sources.list \
+    &amp;&amp; apt-get update \
+    &amp;&amp; apt-get install gcc -y \
+    #debian的镜像，没有ps命令，查个进程没法查, 安装procps,不安装gcc 则不能安装uwsgi模块
+    &amp;&amp; apt-get install procps -y \
+    #&amp;&amp; apt-get install uwsgi -y \
+
+    &amp;&amp; pip config set global.index-url http://mirrors.aliyun.com/pypi/simple \
+    &amp;&amp; pip config set install.trusted-host mirrors.aliyun.com \
+
+    #解决时区问题
+    &amp;&amp; cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtim \
+    #Cython 否则有的pip安装失败 \
+    &amp;&amp; pip install Cython \
+    # 源码编译安装经常有错误，改为apt 安装 pip install uwsgi 功能可以不全 运行时缺少-w 等参数支持 \
+        #其他不需要编译安装的可以统一放在一个requirements.txt文件中,先去掉版本号，可安装最新版或防止找不到出错 \
+        #pymssql 直接安装不上（需py3.8目前不支持。说是python3.7以后platform.linux_distribution()被移除了导致的。）、psycopg2安装不上用psycopg2-binary即可
+    &amp;&amp; pip install uwsgi \
+    &amp;&amp; sed -ri &#39;/pymssql==/d&#39; /data/requirements.txt \
+    &amp;&amp; sed -ri &#39;/psycopg2==/d&#39; /data/requirements.txt \
+    &amp;&amp; sed -ri &#39;s/==[0-9]*(\.*[0-9])*//&#39; /data/requirements.txt \
+    &amp;&amp; pip install --no-cache-dir -r /data/requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com \
+
+    &amp;&amp; pip install numpy \
+    &amp;&amp; pip install matplotlib \
+        #==3.2.1 #指定版本号可能需要先生成wheel，再安装，比较慢 \
+    &amp;&amp; pip install pandas \
+      &amp;&amp; pip install pynacl \
+      &amp;&amp; pip install gevent \
+      &amp;&amp; pip install psycopg2-binary \
+    #&amp;&amp; pip install bottle==$BOTTLE_VER \
+
+    &amp;&amp; unset http_proxy &amp;&amp; unset https_proxy
+
+RUN rm -rf /var/cache/apk/*
+EXPOSE 8091 8797
+CMD /bin/sh
+
+    # set proper permission to run entrypoint script
+#chmod a+x /entrypoint.sh
+
+# This script installs APK and Pip prerequisites on container start, or ONBUILD. Notes:
+#   * Reads the -a flags and /apk-requirements.txt for install requests
+#   * Reads the -b flags and /build-requirements.txt for build packages -- removed when build is complete
+#   * Reads the -p flags and /requirements.txt for Pip packages
+#   * Reads the -r flag to specify a different file path for /requirements.txt
+ENTRYPOINT [&quot;uwsgi&quot;,&quot;--ini&quot;,&quot;/uwsgi/uwsgi_m.ini&quot;]
+#ENTRYPOINT [&quot;/bin/sh&quot;]
+
+
+作者：lcb8816
+链接：https://juejin.cn/post/6850418117462982664
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。```</code></pre></div><footer class="wrapper post__footer"><p class="post__last-updated">This article was updated on 三月 21, 2021</p><div class="post__share"></div><div class="post__bio bio"><div class="bio__info"><h3 class="bio__name"><a href="https://shaoxiaxl.github.io/blog/authors/shaoxia/" class="invert" rel="author">ShaoXia</a></h3></div></div></footer></article><nav class="post__nav"><div class="post__nav-inner"><div class="post__nav-prev"><svg width="1.041em" height="0.416em" aria-hidden="true"><use xlink:href="https://shaoxiaxl.github.io/blog/assets/svg/svg-map.svg#arrow-prev"/></svg> <a href="https://shaoxiaxl.github.io/blog/css-chang-yong-shu-xing.html" class="invert post__nav-link" rel="prev"><span>Previous</span> CSS常用属性</a></div><div class="post__nav-next"><a href="https://shaoxiaxl.github.io/blog/django-filterde-jian-dan-shi-yong.html" class="invert post__nav-link" rel="next"><span>Next</span> django-filter的简单使用 </a><svg width="1.041em" height="0.416em" aria-hidden="true"><use xlink:href="https://shaoxiaxl.github.io/blog/assets/svg/svg-map.svg#arrow-next"/></svg></div></div></nav></main><footer class="footer"><div class="footer__copyright"><p>Powered by <a href="https://getpublii.com" target="_blank" rel="nofollow noopener">Publii</a></p></div><button class="footer__bttop js-footer__bttop" aria-label="Back to top"><svg><title>Back to top</title><use xlink:href="https://shaoxiaxl.github.io/blog/assets/svg/svg-map.svg#toparrow"/></svg></button></footer></div><script>window.publiiThemeMenuConfig = {    
+        mobileMenuMode: 'sidebar',
+        animationSpeed: 300,
+        submenuWidth: 'auto',
+        doubleClickTime: 500,
+        mobileMenuExpandableSubmenus: true, 
+        relatedContainerForOverlayMenuSelector: '.top',
+   };</script><script defer="defer" src="https://shaoxiaxl.github.io/blog/assets/js/scripts.min.js?v=f4c4d35432d0e17d212f2fae4e0f8247"></script><script>var images = document.querySelectorAll('img[loading]');
+
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script></body></html>

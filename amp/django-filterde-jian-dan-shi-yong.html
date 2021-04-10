@@ -1,4 +1,4 @@
-<!doctype html><html amp lang="zh-cn"><head><meta charset="utf-8"><title>Day1,MACD和KDJ策略 - 少侠的记事本</title><meta name="description" content="思路 毫无疑问很多人分析市场都是从MACD和KDJ开始的，MACD是一种趋势分析指标。KDJ的中文叫随机指标，是技术分析中的一种动量分析方法，采用超买和超卖的概念。 MACD的输入参数有两个: KDJ KDJ 的输入参数： KDJ 交易信号 当价格与随机指标发生牛势背离（即价格下跌而随机指标指向上方），而%K线与%D线在超卖区（高于80%或低于20%）发生交叉，便是买入信号；反之则是卖出信号。%K线与%D线的简单交叉经常发生，很多时候并不可靠。投资者多在%D线筑顶或筑底后，等待%K线出现急剧的逆转并与%D线交叉。当市场波动性较大时，也可使用加权移动平均来定义%D线，以平整价格短时内大幅波动对指标产生的影响。 "><link rel="canonical" href="https://shaoxiaxl.github.io/blog/day1macd-hekdj-ce-lue.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://shaoxiaxl.github.io/blog/amp/day1macd-hekdj-ce-lue.html"},"headline":"Day1,MACD和KDJ策略","datePublished":"2018-06-20T23:28","dateModified":"2020-11-20T23:31","description":"思路 毫无疑问很多人分析市场都是从MACD和KDJ开始的，MACD是一种趋势分析指标。KDJ的中文叫随机指标，是技术分析中的一种动量分析方法，采用超买和超卖的概念。 MACD的输入参数有两个: KDJ KDJ 的输入参数： KDJ 交易信号 当价格与随机指标发生牛势背离（即价格下跌而随机指标指向上方），而%K线与%D线在超卖区（高于80%或低于20%）发生交叉，便是买入信号；反之则是卖出信号。%K线与%D线的简单交叉经常发生，很多时候并不可靠。投资者多在%D线筑顶或筑底后，等待%K线出现急剧的逆转并与%D线交叉。当市场波动性较大时，也可使用加权移动平均来定义%D线，以平整价格短时内大幅波动对指标产生的影响。 ","author":{"@type":"Person","name":"ShaoXia"},"publisher":{"@type":"Organization","name":"ShaoXia"}}</script><style amp-custom>article,
+<!doctype html><html amp lang="zh-cn"><head><meta charset="utf-8"><title>django-filter的简单使用 - 少侠的记事本</title><meta name="description" content="django-filter文档地址 INSTALLED_APPS = [ ... &#39;rest_framework&#39;, &#39;django_filters&#39;, &#39;crispy_forms&#39;, &#39;sample&#39;, ] REST_FRAMEWORK = { &#39;DEFAULT_FILTER_BACKENDS&#39;: (&#39;django_filters.rest_framework.DjangoFilterBackend&#39;,) }from django.db import models class Product(models.Model): name = models.CharField(max_length=255) price = models.DecimalField() description = models.TextField() release_date = models.DateField() manufacturer = models.ForeignKey(Manufacturer)###过滤器 进行价格或release_date进行过滤 import django_filters class ProductFilter(django_filters.FilterSet): name = django_filters.CharFilter(lookup_expr=&#39;iexact&#39;) class&hellip;"><link rel="canonical" href="https://shaoxiaxl.github.io/blog/django-filterde-jian-dan-shi-yong.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://shaoxiaxl.github.io/blog/amp/django-filterde-jian-dan-shi-yong.html"},"headline":"django-filter的简单使用","datePublished":"2021-04-10T15:47","dateModified":"2021-04-10T15:56","description":"django-filter文档地址 INSTALLED_APPS = [ ... &#39;rest_framework&#39;, &#39;django_filters&#39;, &#39;crispy_forms&#39;, &#39;sample&#39;, ] REST_FRAMEWORK = { &#39;DEFAULT_FILTER_BACKENDS&#39;: (&#39;django_filters.rest_framework.DjangoFilterBackend&#39;,) }from django.db import models class Product(models.Model): name = models.CharField(max_length=255) price = models.DecimalField() description = models.TextField() release_date = models.DateField() manufacturer = models.ForeignKey(Manufacturer)###过滤器 进行价格或release_date进行过滤 import django_filters class ProductFilter(django_filters.FilterSet): name = django_filters.CharFilter(lookup_expr=&#39;iexact&#39;) class&hellip;","author":{"@type":"Person","name":"ShaoXia"},"publisher":{"@type":"Organization","name":"ShaoXia"}}</script><style amp-custom>article,
 aside,
 footer,
 header,
@@ -553,7 +553,102 @@ aside {
   background: #039be5;
   color: #ffffff;
   padding: 1.06667rem 4%;
-  text-align: center; }</style><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><script async src="https://cdn.ampproject.org/v0.js"></script><script custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js" async></script><script custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js" async></script></head><body class="bg-white"><nav class="navbar wrap-inner" id="top"><div><a on="tap:navbar-sidebar.toggle" class="navbar-sidebar-toggle" title="Menu">Menu</a> <a class="logo logo-text" href="https://shaoxiaxl.github.io/blog/amp/">少侠的记事本</a></div></nav><main class="wrap-page"><article class="post"><div class="wrap-inner"><header class="post-header"><h1>Day1,MACD和KDJ策略</h1><p class="post-meta">By <a href="https://shaoxiaxl.github.io/blog/amp/authors/shaoxia/" rel="nofollow" title="ShaoXia">ShaoXia</a> <time datetime="2018-06-20T23:28">六月 20, 2018</time></p></header><p>思路 毫无疑问很多人分析市场都是从MACD和KDJ开始的，MACD是一种趋势分析指标。KDJ的中文叫随机指标，是技术分析中的一种动量分析方法，采用超买和超卖的概念。</p><p>MACD的输入参数有两个:</p><ol><li>EMA(12)；</li><li>EMA(26)； MACD三种交易讯号：</li><li>差离值（DIF值）与讯号线（DEM值，又称MACD值）相交；当差离值（DIF）从下而上穿过讯号线（DEM），为买进讯号；相反若从上而下穿越，为卖出讯号。买卖讯号可能出现频繁，需要配合其他指标（如：RSI、KD）一同分析。</li><li>差离值与零轴相交；差离值由下而上穿过零轴代表市场气氛利好股价，相反由上而下则代表利淡股价。差离值与讯号线均在零轴上方时，被称为多头市场，反之，则被称为空头市场。</li><li>股价与差离值的背离。当股价创新低，但MACD并没有相应创新低（牛市背离），视为利好（利多）讯息，股价跌势或将完结。相反，若股价创新高，但MACD并没有相应创新高（熊市背离），视为利淡（利空）讯息。同样地，若股价与棒形图不配合，也可作类似结论。 总而言之MACD是一种中长线的研判指标。当股市强烈震荡或股价变化巨大时，可能会给出错误的信号。所以在决定股票操作时，应该谨慎参考其他指标，以及市场状况，不能完全信任差离值的单一研判，避免造成损失。</li></ol><p>KDJ KDJ 的输入参数： KDJ 交易信号 当价格与随机指标发生牛势背离（即价格下跌而随机指标指向上方），而%K线与%D线在超卖区（高于80%或低于20%）发生交叉，便是买入信号；反之则是卖出信号。%K线与%D线的简单交叉经常发生，很多时候并不可靠。投资者多在%D线筑顶或筑底后，等待%K线出现急剧的逆转并与%D线交叉。当市场波动性较大时，也可使用加权移动平均来定义%D线，以平整价格短时内大幅波动对指标产生的影响。</p><aside><ul class="post-tag"><li><a href="https://shaoxiaxl.github.io/blog/amp/tags/cai-jing/">财经</a></li></ul><div class="post-share"><amp-social-share type="system" width="40" height="40" data-param-text="Day1,MACD和KDJ策略"></amp-social-share><amp-social-share type="facebook" width="40" height="40" data-param-app_id="" data-param-text="Day1,MACD和KDJ策略" data-param-href="https://shaoxiaxl.github.io/blog/amp/day1macd-hekdj-ce-lue.html"></amp-social-share><amp-social-share type="twitter" width="40" height="40" data-param-text="Day1,MACD和KDJ策略" data-param-url="https://shaoxiaxl.github.io/blog/amp/day1macd-hekdj-ce-lue.html"></amp-social-share><amp-social-share type="pinterest" width="40" height="40" data-param-url="https://shaoxiaxl.github.io/blog/amp/day1macd-hekdj-ce-lue.html"></amp-social-share><amp-social-share type="tumblr" width="40" height="40" data-param-text="Day1,MACD和KDJ策略" data-param-url="https://shaoxiaxl.github.io/blog/amp/day1macd-hekdj-ce-lue.html"></amp-social-share><amp-social-share type="whatsapp" width="40" height="40" data-param-text="Day1,MACD和KDJ策略" data-param-url="https://shaoxiaxl.github.io/blog/amp/day1macd-hekdj-ce-lue.html"></amp-social-share></div></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Previous</span> <a href="https://shaoxiaxl.github.io/blog/amp/fen-hua-du-de-qu-shi-ce-lue-yong-yu-zhi-shu-de-ce-lue.html">分化度的趋势策略，用于指数的策略</a></div><div class="post-pagination-next"><span>Next</span> <a href="https://shaoxiaxl.github.io/blog/amp/ubuntu-xi-tong-you-hua.html">ubuntu系统优化!</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
+  text-align: center; }</style><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><script async src="https://cdn.ampproject.org/v0.js"></script><script custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js" async></script><script custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js" async></script></head><body class="bg-white"><nav class="navbar wrap-inner" id="top"><div><a on="tap:navbar-sidebar.toggle" class="navbar-sidebar-toggle" title="Menu">Menu</a> <a class="logo logo-text" href="https://shaoxiaxl.github.io/blog/amp/">少侠的记事本</a></div></nav><main class="wrap-page"><article class="post"><div class="wrap-inner"><header class="post-header"><h1>django-filter的简单使用</h1><p class="post-meta">By <a href="https://shaoxiaxl.github.io/blog/amp/authors/shaoxia/" rel="nofollow" title="ShaoXia">ShaoXia</a> <time datetime="2021-04-10T15:47">四月 10, 2021</time></p></header><p><a href="https://django-filter.readthedocs.io/en/master/">django-filter文档地址</a></p><pre><code>INSTALLED_APPS = [
+    ...
+    &#39;rest_framework&#39;,
+    &#39;django_filters&#39;, 
+    &#39;crispy_forms&#39;,
+    &#39;sample&#39;,
+]
+
+REST_FRAMEWORK = {
+    &#39;DEFAULT_FILTER_BACKENDS&#39;: (&#39;django_filters.rest_framework.DjangoFilterBackend&#39;,) 
+}</code></pre><pre><code>from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=255)
+    price = models.DecimalField()
+    description = models.TextField()
+    release_date = models.DateField()
+    manufacturer = models.ForeignKey(Manufacturer)</code></pre><p>###过滤器 进行价格或release_date进行过滤</p><pre><code>import django_filters
+
+class ProductFilter(django_filters.FilterSet):
+    name = django_filters.CharFilter(lookup_expr=&#39;iexact&#39;)
+
+    class Meta:
+        model = Product
+        fields = [&#39;price&#39;, &#39;release_date&#39;]</code></pre><p>###声明 过滤器</p><pre><code>    class ProductFilter(django_filters.FilterSet):
+    price = django_filters.NumberFilter()
+    price__gt = django_filters.NumberFilter(field_name=&#39;price&#39;, lookup_expr=&#39;gt&#39;)
+    price__lt = django_filters.NumberFilter(field_name=&#39;price&#39;, lookup_expr=&#39;lt&#39;)
+
+    release_year = django_filters.NumberFilter(field_name=&#39;release_date&#39;,lookup_expr=&#39;year&#39;)
+    release_year__gt = django_filters.NumberFilter(field_name=&#39;release_date&#39;,lookup_expr=&#39;year__gt&#39;)
+    release_year__lt = django_filters.NumberFilter(field_name=&#39;release_date&#39;,lookup_expr=&#39;year__lt&#39;)
+
+    manufacturer__name = django_filters.CharFilter(lookup_expr=&#39;icontains&#39;)
+
+    class Meta:
+        model = Product</code></pre><h4 id="过滤器有两个主要参数：">过滤器有两个主要参数：</h4><ul><li>field_name：要过滤的模型字段的名称。您可以使用Django的<strong>语法遍历“关系路径”以过滤相关模型上的字段。当然，manufacturer</strong>name。</li><li>lookup_expr：过滤时要使用的字段查找。__ 可以再次使用Django的语法来支持查找转换。当然，year__gte。</li></ul><pre><code>import django_filters
+
+class ProductFilter(django_filters.FilterSet):
+    class Meta:
+        model = Product
+        fields = {
+            &#39;price&#39;: [&#39;lt&#39;, &#39;gt&#39;],
+            &#39;release_date&#39;: [&#39;exact&#39;, &#39;year__gt&#39;],
+        }</code></pre><h4 id="覆盖默认过滤器">覆盖默认过滤器</h4><pre><code>class ProductFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = Product
+        fields = {
+            &#39;name&#39;: [&#39;exact&#39;],
+            &#39;release_date&#39;: [&#39;isnull&#39;],
+        }
+        filter_overrides = {
+            models.CharField: {
+                &#39;filter_class&#39;: django_filters.CharFilter,
+                &#39;extra&#39;: lambda f: {
+                    &#39;lookup_expr&#39;: &#39;icontains&#39;,
+                },
+            },
+            models.BooleanField: {
+                &#39;filter_class&#39;: django_filters.BooleanFilter,
+                &#39;extra&#39;: lambda f: {
+                    &#39;widget&#39;: forms.CheckboxInput,
+                },
+            },
+        }</code></pre><p>###与DRF集成</p><pre><code>from django_filters import rest_framework as filters
+
+class ProductList(generics.ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_fields = (&#39;category&#39;, &#39;in_stock&#39;)</code></pre><pre><code>from rest_framework import generics
+from django_filters import rest_framework as filters
+from myapp import Product
+
+
+class ProductFilter(filters.FilterSet):
+    min_price = filters.NumberFilter(field_name=&quot;price&quot;, lookup_expr=&#39;gte&#39;)
+    max_price = filters.NumberFilter(field_name=&quot;price&quot;, lookup_expr=&#39;lte&#39;)
+
+    class Meta:
+        model = Product
+        fields = [&#39;category&#39;, &#39;in_stock&#39;, &#39;min_price&#39;, &#39;max_price&#39;]
+
+
+class ProductList(generics.ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = ProductFilter</code></pre><p>lookup_expr |検索方法 exact |完全一致 contains |部分一致 startswith |前方一致 endswith |後方一致 regex |正規表現</p><p>数值 日期</p><p>lookup_expr｜ 検索方法 gt ｜超 lt ｜未満 gte ｜以上 lte ｜以下</p><p>时间 日期 lookup_expr｜ 検索方法 date ｜日付(YYYY-M-D) year ｜年(YYYY) month ｜月(M) day ｜日(D) week_day ｜(1-7 日曜が1) hour ｜時(H) minute ｜分(m) second ｜秒(s)</p><pre><code>fullname = filters.CharFilter(lookup_expr=&#39;contains&#39;)
+score = filters.NumberFilter(lookup_expr=&#39;gt&#39;)
+is_checked = filters.BooleanFilter()
+created_at = filters.DateTimeFilter(lookup_expr=&#39;gt&#39;)
+score_range = filters.RangeFilter(name=&#39;score&#39;)
+level = filters.ChoiceFilter(choices=Exam.LEVEL_SET)
+level = filters.MultipleChoiceFilter(choices=Exam.LEVEL_SET)</code></pre><aside><div class="post-share"><amp-social-share type="system" width="40" height="40" data-param-text="django-filter的简单使用"></amp-social-share><amp-social-share type="facebook" width="40" height="40" data-param-app_id="" data-param-text="django-filter的简单使用" data-param-href="https://shaoxiaxl.github.io/blog/amp/django-filterde-jian-dan-shi-yong.html"></amp-social-share><amp-social-share type="twitter" width="40" height="40" data-param-text="django-filter的简单使用" data-param-url="https://shaoxiaxl.github.io/blog/amp/django-filterde-jian-dan-shi-yong.html"></amp-social-share><amp-social-share type="pinterest" width="40" height="40" data-param-url="https://shaoxiaxl.github.io/blog/amp/django-filterde-jian-dan-shi-yong.html"></amp-social-share><amp-social-share type="tumblr" width="40" height="40" data-param-text="django-filter的简单使用" data-param-url="https://shaoxiaxl.github.io/blog/amp/django-filterde-jian-dan-shi-yong.html"></amp-social-share><amp-social-share type="whatsapp" width="40" height="40" data-param-text="django-filter的简单使用" data-param-url="https://shaoxiaxl.github.io/blog/amp/django-filterde-jian-dan-shi-yong.html"></amp-social-share></div></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Previous</span> <a href="https://shaoxiaxl.github.io/blog/amp/docker-image-neiapt-pip-gai-yuan.html">docker image内apt pip 改源</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
                     "duration": "200ms",
                     "fill": "both",
                     "iterations": "1",
